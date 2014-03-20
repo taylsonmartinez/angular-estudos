@@ -1,0 +1,15 @@
+<h1>Lista de Funcionários</h1>
+<label>
+    Exibir lista
+    <input type="checkbox" ng-model="mostra">
+</label>
+<label>
+    <input type="search" placeholder="Digite o nome" ng-model="textoFiltro">
+</label>
+<p>{{mensagem}}</p>
+<ul ng-show="mostra">
+	<li ng-repeat="funcionario in funcionarios | filter: textoFiltro">
+        {{funcionario.nome}} <button ng-click="remove(funcionario)">Remove</button>
+    </li>
+</ul>
+<a ng-href="#/">Voltar</a>
